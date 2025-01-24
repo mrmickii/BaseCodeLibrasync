@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CSharpProject\\PRACTICE\\LIBRASYNCAPI\\LIBRASYNCAPI.csproj": {}
+    "D:\\Programming\\CSharpProject\\BaseCodeLibrasync\\LIBRASYNCAPI\\LIBRASYNCAPI.csproj": {}
   },
   "projects": {
-    "D:\\CSharpProject\\PRACTICE\\LIBRASYNCAPI\\LIBRASYNCAPI.csproj": {
+    "D:\\Programming\\CSharpProject\\BaseCodeLibrasync\\LIBRASYNCAPI\\LIBRASYNCAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CSharpProject\\PRACTICE\\LIBRASYNCAPI\\LIBRASYNCAPI.csproj",
+        "projectUniqueName": "D:\\Programming\\CSharpProject\\BaseCodeLibrasync\\LIBRASYNCAPI\\LIBRASYNCAPI.csproj",
         "projectName": "LIBRASYNCAPI",
-        "projectPath": "D:\\CSharpProject\\PRACTICE\\LIBRASYNCAPI\\LIBRASYNCAPI.csproj",
+        "projectPath": "D:\\Programming\\CSharpProject\\BaseCodeLibrasync\\LIBRASYNCAPI\\LIBRASYNCAPI.csproj",
         "packagesPath": "C:\\Users\\garci\\.nuget\\packages\\",
-        "outputPath": "D:\\CSharpProject\\PRACTICE\\LIBRASYNCAPI\\obj\\",
+        "outputPath": "D:\\Programming\\CSharpProject\\BaseCodeLibrasync\\LIBRASYNCAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\garci\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -46,6 +46,26 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"

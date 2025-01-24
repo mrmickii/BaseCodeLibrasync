@@ -19,5 +19,14 @@
         [Required]
         public DateTime PublicationDate { get; set; }
 
+        [Required]
+        public required string Language { get; set; }
+
+        [Required]
+        public required string CatergoryId { get; set; }
+
+        [Required]
+        public required bool Status { get; set; }
+
     }
 }

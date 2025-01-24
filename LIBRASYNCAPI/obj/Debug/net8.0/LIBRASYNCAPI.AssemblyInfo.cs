@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LIBRASYNCAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ae3e34d9a83e926e7735682af943071c7e87750")]
 [assembly: System.Reflection.AssemblyProductAttribute("LIBRASYNCAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LIBRASYNCAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

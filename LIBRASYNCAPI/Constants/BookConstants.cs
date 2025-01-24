@@ -1,6 +1,6 @@
 ﻿namespace LIBRASYNCAPI.Constants
 {
-    public class BookConstants
+    public static class BookConstants
     {
         public static class HttpRoutes 
         {
@@ -10,6 +10,11 @@
             public const string CREATE = "create";
             public const string UPDATE = "update/{id}";
             public const string DELETE = "delete/{id}";
+        }
+
+        public static class LoggerStatus 
+        { 
+
         }
     }
 }
