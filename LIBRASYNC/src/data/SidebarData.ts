@@ -1,13 +1,13 @@
 export const SidebarData = [
   {
+    title: "Home",
+    icon: null,
+    path: "/home"
+  },
+  {
     title: "Library",
     icon: null,
     path: "/library"
-  },
-  {
-    title: "Add Items",
-    icon: null,
-    path: "/add-items"
   },
   {
     title: "Manange Items",

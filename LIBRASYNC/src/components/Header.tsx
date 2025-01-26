@@ -1,6 +1,7 @@
 import { useState } from "react"
 import profile from "../assets/react.svg" 
 import { DropdownMenuData } from "../data/DropdownMenuData";
+import logo from "../assets/a.png"
 
 export const Header = () => {
   const [isOpen, setOpen] = useState<Boolean>(false);
@@ -12,7 +13,7 @@ export const Header = () => {
   return (
     <header className="h-14 flex justify-between items-center px-10 bg-white shadow-md">
       <div className="flex justify-center items-center ">
-        <img src={profile} alt="" className="border rounded-full mr-3"/>
+        <img src={logo} alt="" className="rounded-full mr-3 w-11 h-10"/>
         <h1 className="text-sm font-bold">LIBRASYNC</h1>
       </div>
       <div className="flex justify-center ">

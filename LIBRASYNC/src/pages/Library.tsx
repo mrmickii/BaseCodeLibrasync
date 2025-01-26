@@ -1,10 +1,9 @@
-import { Header } from './components/Header'
-import { Sidebar } from './components/Sidebar'
-import { BookApi } from './api/BookApi'
-import { Book } from './types/Book'
-import { TableHeader } from './data/TableHeader'
+import { Header } from '../components/Header'
+import { Sidebar } from '../components/Sidebar'
+import { BookApi } from '../api/BookApi'
+import { Book } from '../types/Book'
+import { TableHeader } from '../data/TableHeader'
 import { useEffect, useState } from 'react'
-import { Table } from '@mui/material'
 
 export const Library = () => {
   const [data, setData] = useState<Book[]>([]);

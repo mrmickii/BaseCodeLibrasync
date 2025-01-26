@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "D:\\Programming\\CSharpProject\\BaseCodeLibrasync\\LIBRASYNCAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1C2E2CE0-508B-47C6-889E-FFD8E5D0A4CE}|LIBRASYNCAPI.csproj|d:\\programming\\csharpproject\\basecodelibrasync\\librasyncapi\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C2E2CE0-508B-47C6-889E-FFD8E5D0A4CE}|LIBRASYNCAPI.csproj|solutionrelative:services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C2E2CE0-508B-47C6-889E-FFD8E5D0A4CE}|LIBRASYNCAPI.csproj|d:\\programming\\csharpproject\\basecodelibrasync\\librasyncapi\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C2E2CE0-508B-47C6-889E-FFD8E5D0A4CE}|LIBRASYNCAPI.csproj|solutionrelative:controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1C2E2CE0-508B-47C6-889E-FFD8E5D0A4CE}|LIBRASYNCAPI.csproj|d:\\programming\\csharpproject\\basecodelibrasync\\librasyncapi\\entity\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C2E2CE0-508B-47C6-889E-FFD8E5D0A4CE}|LIBRASYNCAPI.csproj|solutionrelative:entity\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C2E2CE0-508B-47C6-889E-FFD8E5D0A4CE}|LIBRASYNCAPI.csproj|d:\\programming\\csharpproject\\basecodelibrasync\\librasyncapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C2E2CE0-508B-47C6-889E-FFD8E5D0A4CE}|LIBRASYNCAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C2E2CE0-508B-47C6-889E-FFD8E5D0A4CE}|LIBRASYNCAPI.csproj|d:\\programming\\csharpproject\\basecodelibrasync\\librasyncapi\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C2E2CE0-508B-47C6-889E-FFD8E5D0A4CE}|LIBRASYNCAPI.csproj|solutionrelative:services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C2E2CE0-508B-47C6-889E-FFD8E5D0A4CE}|LIBRASYNCAPI.csproj|d:\\programming\\csharpproject\\basecodelibrasync\\librasyncapi\\constants\\bookconstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C2E2CE0-508B-47C6-889E-FFD8E5D0A4CE}|LIBRASYNCAPI.csproj|solutionrelative:constants\\bookconstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C2E2CE0-508B-47C6-889E-FFD8E5D0A4CE}|LIBRASYNCAPI.csproj|d:\\programming\\csharpproject\\basecodelibrasync\\librasyncapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C2E2CE0-508B-47C6-889E-FFD8E5D0A4CE}|LIBRASYNCAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 206,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,20 +34,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Book.cs",
               "DocumentMoniker": "D:\\Programming\\CSharpProject\\BaseCodeLibrasync\\LIBRASYNCAPI\\Entity\\Book.cs",
               "RelativeDocumentMoniker": "Entity\\Book.cs",
               "ToolTip": "D:\\Programming\\CSharpProject\\BaseCodeLibrasync\\LIBRASYNCAPI\\Entity\\Book.cs",
               "RelativeToolTip": "Entity\\Book.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwAoAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-24T10:28:47.091Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "BookService.cs",
               "DocumentMoniker": "D:\\Programming\\CSharpProject\\BaseCodeLibrasync\\LIBRASYNCAPI\\Services\\BookService.cs",
               "RelativeDocumentMoniker": "Services\\BookService.cs",
@@ -63,12 +55,11 @@
               "RelativeToolTip": "Services\\BookService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T16:53:46.328Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-22T16:53:46.328Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Programming\\CSharpProject\\BaseCodeLibrasync\\LIBRASYNCAPI\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -76,39 +67,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAcwBwAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T16:43:39.594Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 206,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BookController.cs",
-              "DocumentMoniker": "D:\\Programming\\CSharpProject\\BaseCodeLibrasync\\LIBRASYNCAPI\\Controllers\\BookController.cs",
-              "RelativeDocumentMoniker": "Controllers\\BookController.cs",
-              "ToolTip": "D:\\Programming\\CSharpProject\\BaseCodeLibrasync\\LIBRASYNCAPI\\Controllers\\BookController.cs",
-              "RelativeToolTip": "Controllers\\BookController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T10:36:02.531Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BookConstants.cs",
-              "DocumentMoniker": "D:\\Programming\\CSharpProject\\BaseCodeLibrasync\\LIBRASYNCAPI\\Constants\\BookConstants.cs",
-              "RelativeDocumentMoniker": "Constants\\BookConstants.cs",
-              "ToolTip": "D:\\Programming\\CSharpProject\\BaseCodeLibrasync\\LIBRASYNCAPI\\Constants\\BookConstants.cs",
-              "RelativeToolTip": "Constants\\BookConstants.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T17:12:46.777Z"
+              "WhenOpened": "2025-01-22T16:43:39.594Z"
             }
           ]
         }
