@@ -1,59 +1,41 @@
 import { Header } from '../components/Customs/Header'
 import { Sidebar } from '../components/Customs/Sidebar'
-import { BookApi } from '../api/BookApi'
-import { Book } from '../types/Book'
-import { TableHeader } from '../data/TableHeader'
-import { useEffect, useState } from 'react'
+import { LocationBar } from '../components/Customs/LocationBar'
+import SendIcon from "../assets/send.svg"
 
 export const BookCatalog = () => {
-  const [data, setData] = useState<Book[]>([]);
-
-  const fetchData = async () => {
-    try {
-        const response = await fetch(BookApi.getBook);
-
-        if(!response.ok) {
-          throw new Error('Failed to fetch data');
-        }
-        const data:Book[] = await response.json();
-        setData(data);
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
   return (
     <div className="bg-zinc-100">
       <Header />
-      <div className='flex'>
+      <div className="flex">
         <Sidebar />
-        <div className='p-10 w-screen'>
-          <p className='text-sm font-semibold'>Search for Books</p>
-          <div className='input-container'> 
-            <input type="search" placeholder='Search for books' className='text-sm border px-2 py-1' />
+        <div className="p-5 w-full">
+          <LocationBar />
+          <div className='flex w-full my-5 rounded-md justify-between'>
+            <div className='flex gap-2 items-center'>
+              <p className='text-sm text-gray-500 py-3'>Availability: </p>
+              <select name="" id="" className='w-52 border-none h-8 rounded-md'></select>
+              <button className='bg-cyan-400 px-3 py-1.5 rounded-md flex gap-2 ml-5'>
+                <img src={SendIcon} alt="" />
+                <p className='text-white text-sm'>Filter</p>
+              </button>
+            </div>
+            <div className='flex items-center gap-3'>
+              <p className='text-sm text-gray-500'>Search:</p>
+              <input type="search" name="" id="" placeholder='Title' className='text-sm px-2 py-1 rounded-md'/>
+            </div>
           </div>
           
-          {/* BOOK TABLE DISPLAY */}
-          <table className='table-auto w-full mt-5 border'>
-            <thead className='text-sm font-semibold'>
+          <table>
+            <thead>
               <tr>
-                {TableHeader.map((item, index) => (
-                  <th key={index}>{item.title}</th>
-                ))}
               </tr>
             </thead>
-            <tbody className='text-sm'>
-              {data.map((book) => (
-                <tr key={book.id}>
-                  <td>{book.title}</td>
-                  <td>{book.author}</td>
-                  <td>{new Date(book.publicationDate).toLocaleDateString()}</td>
-                </tr>
-              ))}
+
+            <tbody>
+              <tr>
+
+              </tr>
             </tbody>
           </table>
         </div>
