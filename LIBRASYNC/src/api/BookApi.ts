@@ -1,4 +1,4 @@
-const BASE_URL = "https://localhost:44376/api";
+const BASE_URL = "http://localhost:44391/api";
 
 export const BookApi = {
   getBook: `${BASE_URL}/Book`,

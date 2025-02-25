@@ -1,11 +1,11 @@
-import { Header } from '../components/Header'
-import { Sidebar } from '../components/Sidebar'
+import { Header } from '../components/Customs/Header'
+import { Sidebar } from '../components/Customs/Sidebar'
 import { BookApi } from '../api/BookApi'
 import { Book } from '../types/Book'
 import { TableHeader } from '../data/TableHeader'
 import { useEffect, useState } from 'react'
 
-export const Library = () => {
+export const BookCatalog = () => {
   const [data, setData] = useState<Book[]>([]);
 
   const fetchData = async () => {

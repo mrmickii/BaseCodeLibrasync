@@ -1,7 +1,7 @@
 import { useState } from "react"
-import profile from "../assets/react.svg" 
-import { DropdownMenuData } from "../data/DropdownMenuData";
-import logo from "../assets/a.png"
+import profile from "../../assets/react.svg" 
+import { DropdownMenuData } from "../../data/DropdownMenuData";
+import logo from "../../assets/a.png"
 
 export const Header = () => {
   const [isOpen, setOpen] = useState<Boolean>(false);
