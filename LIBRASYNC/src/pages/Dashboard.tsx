@@ -7,8 +7,31 @@ import BookIcon from "../assets/books.svg"
 import ArrowLeft from "../assets/arrow-left.svg"
 import ArrowRight from "../assets/arrow-right.svg"
 import UserIcon from "../assets/user.svg"
+import { useEffect, useState } from "react"
+import { Book } from "../types/Book"
 
 export const Dashboard = () => {
+  const [book, setBook] = useState<Book[]>([]);
+
+  const fetchBookData = async () => {
+    try {
+      const response = await fetch("https://localhost:44391/api/book");
+
+      if(!response.ok){
+        throw new Error("Failed to fetch book data.");
+      }
+
+      const data = await response.json();
+      setBook(data);
+    } catch (error) {
+      throw new Error(error + "Failed to fetch book data.");
+    }
+  }
+
+  useEffect(() => {
+    fetchBookData();
+  },[])
+
   return (
     <div className="bg-zinc-100">
       <Header />
@@ -17,7 +40,7 @@ export const Dashboard = () => {
         <div className="p-5 w-full">
           <LocationBar />
           <div className="flex justify-between">
-            <ContainerBox title={"Number of books"} count={5} icon={BookIcon} className="bg-cyan-100"/>
+            <ContainerBox title={"Number of books"} count={book.length} icon={BookIcon} className="bg-cyan-100"/>
             <ContainerBox title={"Books Borrowed"} count={5} icon={ArrowLeft} className="bg-green-100"/>
             <ContainerBox title={"Book Returned"} count={5} icon={ArrowRight} className="bg-yellow-100"/>
             <ContainerBox title={"Users"} count={5} icon={UserIcon} className="bg-red-100"/>
