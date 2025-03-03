@@ -1,6 +1,6 @@
 ﻿namespace LIBRASYNCAPI.Repository.Interfaces
 {
-    using LIBRASYNCAPI.Entity;
+    using LIBRASYNCAPI.Model.Entity;
 
     public interface IBookRepo
     {

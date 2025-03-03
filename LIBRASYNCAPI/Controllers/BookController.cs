@@ -1,6 +1,7 @@
 ﻿namespace LIBRASYNCAPI.Controllers
 {
-    using LIBRASYNCAPI.Entity;
+    using LIBRASYNCAPI.Model.DTO;
+    using LIBRASYNCAPI.Model.Entity;
     using LIBRASYNCAPI.Services.Interfaces;
     using Microsoft.AspNetCore.Cors;
     using Microsoft.AspNetCore.Mvc;
@@ -32,21 +33,21 @@
         }
 
         [HttpPost(Constants.BookConstants.HttpRoutes.CREATE)]
-        public async Task<IActionResult> Add([FromBody]Book book) 
+        public async Task<IActionResult> Add([FromBody]BookDTO model) 
         { 
-            await _bookService.AddAsync(book);
+            await _bookService.AddAsync(model);
             return Ok();
         }
 
         [HttpPut(Constants.BookConstants.HttpRoutes.UPDATE)]
-        public async Task<IActionResult> Update([FromBody]Book newBook, int id)
+        public async Task<IActionResult> Update([FromBody]BookDTO model, int id)
         {
-            if (newBook.Id != id) 
+            if (model.Id != id) 
             { 
                 return BadRequest();
             }
 
-            await _bookService.UpdateAsync(newBook);
+            await _bookService.UpdateAsync(model);
             return Ok();
         }
 

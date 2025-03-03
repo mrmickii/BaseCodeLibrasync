@@ -1,6 +1,6 @@
 ﻿namespace LIBRASYNCAPI.Data
 {
-    using LIBRASYNCAPI.Entity;
+    using LIBRASYNCAPI.Model.Entity;
     using Microsoft.EntityFrameworkCore;
 
     public class AppDbContext : DbContext

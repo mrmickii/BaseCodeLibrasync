@@ -1,10 +1,9 @@
-﻿namespace LIBRASYNCAPI.Entity
-{
-    using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-    public class Book
+namespace LIBRASYNCAPI.Model.DTO
+{
+    public class BookDTO
     {
-        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -14,19 +13,21 @@
         public required string Title { get; set; }
 
         [Required]
+        public required string Genre { get; set; }
+
+        [Required]
         public required string Author { get; set; }
 
         [Required]
-        public DateTime PublicationDate { get; set; }
+        public required int Isbn { get; set; }
 
         [Required]
-        public required string Language { get; set; }
+        public required DateOnly PublicationDate { get; set; }
 
         [Required]
-        public required string CatergoryId { get; set; }
+        public required string UpdatedBy { get; set; }
 
         [Required]
         public required bool Status { get; set; }
-
     }
 }

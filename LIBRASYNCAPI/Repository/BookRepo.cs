@@ -1,7 +1,7 @@
 ﻿namespace LIBRASYNCAPI.Repository
 {
     using LIBRASYNCAPI.Data;
-    using LIBRASYNCAPI.Entity;
+    using LIBRASYNCAPI.Model.Entity;
     using LIBRASYNCAPI.Repository.Interfaces;
     using Microsoft.EntityFrameworkCore;
 

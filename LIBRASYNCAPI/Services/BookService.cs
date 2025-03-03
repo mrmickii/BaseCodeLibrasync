@@ -1,6 +1,7 @@
 ﻿namespace LIBRASYNCAPI.Services
 {
-    using LIBRASYNCAPI.Entity;
+    using LIBRASYNCAPI.Model.DTO;
+    using LIBRASYNCAPI.Model.Entity;
     using LIBRASYNCAPI.Repository.Interfaces;
     using LIBRASYNCAPI.Services.Interfaces;
 
@@ -38,27 +39,66 @@
             return await _bookRepo.GetById(id);
         }
 
-        public async Task AddAsync(Book book)
+        public async Task AddAsync(BookDTO model)
         {
-            var existingBookTitle = (await _bookRepo.GetAll()).Any(bt => bt.Title.Equals(book.Title, StringComparison.OrdinalIgnoreCase));
-            var existingBookId = (await _bookRepo.GetAll()).Any(bid => bid.Id == book.Id);
+            var existingBookTitle = (await _bookRepo.GetAll()).Any(bt => bt.Title.Equals(model.Title, StringComparison.OrdinalIgnoreCase));
+            var existingBookId = (await _bookRepo.GetAll()).Any(bid => bid.Id == model.Id);
 
             if (existingBookId)
             {
-                throw new InvalidOperationException($"Book with id `{book.BookId}` arealdy exists.");
+                throw new InvalidOperationException($"Book with id `{model.BookId}` arealdy exists.");
             }
 
             if (existingBookTitle) 
             {
-                throw new InvalidOperationException($"Book with the name `{book.Title}` already exists.");
+                throw new InvalidOperationException($"Book with the name `{model.Title}` already exists.");
             }
 
-            await _bookRepo.Add(book);
+            var newBook = new Book
+            {
+                BookId = model.BookId,
+                Title = model.Title,
+                Genre = model.Genre,
+                Author = model.Author,
+                Isbn = model.Isbn,
+                PublicationDate = model.PublicationDate,
+                DateUpdated = DateTime.Now,
+                UpdatedBy = "N/A",
+                Status = true
+            };
+
+            await _bookRepo.Add(newBook);
         }
 
-        public Task UpdateAsync(Book newBook)
+        public async Task UpdateAsync(BookDTO model)
         {
-            return _bookRepo.Update(newBook);
+            var existingBookTitle = (await _bookRepo.GetAll()).Any(bt => bt.Title.Equals(model.Title, StringComparison.OrdinalIgnoreCase));
+            var existingBookId = (await _bookRepo.GetAll()).Any(bid => bid.Id == model.Id);
+
+            if (existingBookId)
+            {
+                throw new InvalidOperationException($"Book with id `{model.BookId}` arealdy exists.");
+            }
+
+            if (existingBookTitle)
+            {
+                throw new InvalidOperationException($"Book with the name `{model.Title}` already exists.");
+            }
+
+            var updatedBook = new Book
+            {
+                BookId = model.BookId,
+                Title = model.Title,
+                Genre = model.Genre,
+                Author = model.Author,
+                Isbn = model.Isbn,
+                PublicationDate = model.PublicationDate,
+                DateUpdated = DateTime.Now,
+                UpdatedBy = "N/A",
+                Status = model.Status
+            };
+
+            await _bookRepo.Update(updatedBook);
         }
 
         public async Task DeleteAsync(int id)

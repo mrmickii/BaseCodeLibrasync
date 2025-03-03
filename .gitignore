@@ -118,3 +118,8 @@ Desktop.ini
 
 # Ignore migrations
 LIBRASYNCAPI/Migrations/
+
+# Ignore VS and build-related files
+.vs/
+bin/
+obj/

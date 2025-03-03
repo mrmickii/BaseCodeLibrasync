@@ -1,6 +1,7 @@
 ﻿namespace LIBRASYNCAPI.Services.Interfaces
 {
-    using LIBRASYNCAPI.Entity;
+    using LIBRASYNCAPI.Model.DTO;
+    using LIBRASYNCAPI.Model.Entity;
 
     public interface IBookService
     {
@@ -8,9 +9,9 @@
 
         Task<Book> GetByIdAsync(int id);
 
-        Task AddAsync(Book book);
+        Task AddAsync(BookDTO model);
 
-        Task UpdateAsync(Book newBook);
+        Task UpdateAsync(BookDTO model);
 
         Task DeleteAsync(int id);
     }
