@@ -22,7 +22,7 @@ export const SidebarData = [
       {
         title: "Manange Books",
         icon: manage,
-        path: "/mananage-books"
+        path: "/manage-books"
       },
       {
         title: "Reports & Logs",

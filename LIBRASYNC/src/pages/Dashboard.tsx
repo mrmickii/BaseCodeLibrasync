@@ -15,7 +15,7 @@ export const Dashboard = () => {
 
   const fetchBookData = async () => {
     try {
-      const response = await fetch("https://localhost:44391/api/book");
+      const response = await fetch("http://localhost:5285/api/book");
 
       if(!response.ok){
         throw new Error("Failed to fetch book data.");

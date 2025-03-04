@@ -10,7 +10,7 @@ export const BookCatalog = () => {
 
   const fetchBookData = async () => {
     try {
-      const response = await fetch("https://localhost:44391/api/book");
+      const response = await fetch("http://localhost:5285/api/book");
 
       if(!response.ok){
         throw new Error("Failed to fetch book data");
@@ -25,6 +25,8 @@ export const BookCatalog = () => {
   useEffect(() => {
     fetchBookData();
   },[])
+
+  
 
   return (
     <div className="bg-zinc-100">
@@ -61,18 +63,26 @@ export const BookCatalog = () => {
               </tr>
             </thead>
 
-            <tbody className='text-sm bg-white text-center h-20'>
-              {book.map(books => (
-                <tr key={books.id}>
-                  <td>{books.bookId}</td>
-                  <td>{books.title}</td>
-                  <td>{books.genre}</td>
-                  <td>{books.author}</td>
-                  <td>{books.isbn}</td>
-                  <td>{books.publicationDate}</td>
-                  <td className={books.status ? "text-green-500" : "text-red-500"}>{books.status ? "Available": "Borrowed"}</td>
+            <tbody className='text-sm bg-white text-center'>
+              {book.length > 0 ? 
+                book.map(books => (
+                  <tr className='h-10' key={books.id}>
+                    <td>{books.bookId}</td>
+                    <td>{books.title}</td>
+                    <td>{books.genre}</td>
+                    <td>{books.author}</td>
+                    <td>{books.isbn}</td>
+                    <td>{books.publicationDate}</td>
+                    <td className={books.status ? "text-green-500" : "text-red-500"}>{books.status ? "Available": "Borrowed"}</td>
+                  </tr>
+                ))
+                :
+                <tr>
+                  <td colSpan={7} className='h-10'>
+                    No Books Available
+                  </td> 
                 </tr>
-              ))}
+              }
             </tbody>
           </table>
 
