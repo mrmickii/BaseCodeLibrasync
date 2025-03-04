@@ -43,6 +43,7 @@
             if (result != null)
             {
                 _context.Books.Remove(result);
+                await _context.SaveChangesAsync();
             }
         }
     }

@@ -42,12 +42,6 @@
         public async Task AddAsync(BookDTO model)
         {
             var existingBookTitle = (await _bookRepo.GetAll()).Any(bt => bt.Title.Equals(model.Title, StringComparison.OrdinalIgnoreCase));
-            var existingBookId = (await _bookRepo.GetAll()).Any(bid => bid.Id == model.Id);
-
-            if (existingBookId)
-            {
-                throw new InvalidOperationException($"Book with id `{model.BookId}` arealdy exists.");
-            }
 
             if (existingBookTitle) 
             {
@@ -63,7 +57,7 @@
                 Isbn = model.Isbn,
                 PublicationDate = model.PublicationDate,
                 DateUpdated = DateTime.Now,
-                UpdatedBy = "N/A",
+                UpdatedBy = "Admin",
                 Status = true
             };
 
@@ -72,33 +66,23 @@
 
         public async Task UpdateAsync(BookDTO model)
         {
-            var existingBookTitle = (await _bookRepo.GetAll()).Any(bt => bt.Title.Equals(model.Title, StringComparison.OrdinalIgnoreCase));
-            var existingBookId = (await _bookRepo.GetAll()).Any(bid => bid.Id == model.Id);
+            var existingBook = await _bookRepo.GetById(model.Id);
 
-            if (existingBookId)
+            if(existingBook == null)
             {
-                throw new InvalidOperationException($"Book with id `{model.BookId}` arealdy exists.");
+                throw new Exception("Book not found");
             }
 
-            if (existingBookTitle)
-            {
-                throw new InvalidOperationException($"Book with the name `{model.Title}` already exists.");
-            }
+            existingBook.Title = model.Title;
+            existingBook.Genre = model.Genre;
+            existingBook.Author = model.Author;
+            existingBook.Isbn = model.Isbn;
+            existingBook.PublicationDate = model.PublicationDate;
+            existingBook.DateUpdated = DateTime.Now;
+            existingBook.UpdatedBy = model.UpdatedBy;
+            existingBook.Status = model.Status;
 
-            var updatedBook = new Book
-            {
-                BookId = model.BookId,
-                Title = model.Title,
-                Genre = model.Genre,
-                Author = model.Author,
-                Isbn = model.Isbn,
-                PublicationDate = model.PublicationDate,
-                DateUpdated = DateTime.Now,
-                UpdatedBy = "N/A",
-                Status = model.Status
-            };
-
-            await _bookRepo.Update(updatedBook);
+            await _bookRepo.Update(existingBook);
         }
 
         public async Task DeleteAsync(int id)
