@@ -4,13 +4,14 @@ import { LocationBar } from '../components/Customs/LocationBar'
 import SendIcon from "../assets/send.svg"
 import { useEffect, useState } from 'react'
 import { Book } from '../types/Book'
+import { BookApi } from '../api/BookApi'
 
 export const BookCatalog = () => {
   const [book,setBook] = useState<Book[]>([]);
 
   const fetchBookData = async () => {
     try {
-      const response = await fetch("http://localhost:5285/api/book");
+      const response = await fetch(BookApi.getBook);
 
       if(!response.ok){
         throw new Error("Failed to fetch book data");
@@ -25,8 +26,6 @@ export const BookCatalog = () => {
   useEffect(() => {
     fetchBookData();
   },[])
-
-  
 
   return (
     <div className="bg-zinc-100">
@@ -50,41 +49,43 @@ export const BookCatalog = () => {
             </div>
           </div>
           
-          <table className='border w-full rounded-md shadow-md'>
-            <thead className='text-sm h-10'>
-              <tr>
-                <th className='border'>Book ID</th>
-                <th className='border'>Title</th>
-                <th className='border'>Genre</th>
-                <th className='border'>Author</th>
-                <th className='border'>Isbn</th>
-                <th className='border w-52'>Year Published</th>
-                <th className='border'>Status</th>
-              </tr>
-            </thead>
-
-            <tbody className='text-sm bg-white text-center'>
-              {book.length > 0 ? 
-                book.map(books => (
-                  <tr className='h-10' key={books.id}>
-                    <td>{books.bookId}</td>
-                    <td>{books.title}</td>
-                    <td>{books.genre}</td>
-                    <td>{books.author}</td>
-                    <td>{books.isbn}</td>
-                    <td>{books.publicationDate}</td>
-                    <td className={books.status ? "text-green-500" : "text-red-500"}>{books.status ? "Available": "Borrowed"}</td>
-                  </tr>
-                ))
-                :
+          <div className='overflow-y-scroll h-80 shadow-md rounded-md'>
+            <table className='border w-full'>
+              <thead className="text-sm h-10 shadow-md">
                 <tr>
-                  <td colSpan={7} className='h-10'>
-                    No Books Available
-                  </td> 
+                  <th className='border'>Book ID</th>
+                  <th className='border'>Title</th>
+                  <th className='border'>Genre</th>
+                  <th className='border'>Author</th>
+                  <th className='border'>Isbn</th>
+                  <th className='border w-52'>Year Published</th>
+                  <th className='border'>Status</th>
                 </tr>
-              }
-            </tbody>
-          </table>
+              </thead>
+
+              <tbody className='text-sm bg-white text-center'>
+                {book.length > 0 ? 
+                  book.map(books => (
+                    <tr className='h-10' key={books.id}>
+                      <td>{books.bookId}</td>
+                      <td>{books.title}</td>
+                      <td>{books.genre}</td>
+                      <td>{books.author}</td>
+                      <td>{books.isbn}</td>
+                      <td>{books.publicationDate}</td>
+                      <td className={books.status ? "text-green-500" : "text-red-500"}>{books.status ? "Available": "Borrowed"}</td>
+                    </tr>
+                  ))
+                  :
+                  <tr>
+                    <td colSpan={7} className='h-10'>
+                      No Books Available
+                    </td> 
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
 
         </div>
       </div>

@@ -9,13 +9,14 @@ import ArrowRight from "../assets/arrow-right.svg"
 import UserIcon from "../assets/user.svg"
 import { useEffect, useState } from "react"
 import { Book } from "../types/Book"
+import { BookApi } from "../api/BookApi"
 
 export const Dashboard = () => {
   const [book, setBook] = useState<Book[]>([]);
 
   const fetchBookData = async () => {
     try {
-      const response = await fetch("http://localhost:5285/api/book");
+      const response = await fetch(BookApi.getBook);
 
       if(!response.ok){
         throw new Error("Failed to fetch book data.");
